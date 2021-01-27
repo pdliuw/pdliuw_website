@@ -15,6 +15,10 @@ import 'sort/sort_home_page.dart';
 ///
 /// application main
 void main() {
+  //application global operate error widget
+  ErrorWidget.builder = (detail) {
+    return Text("${detail.exceptionAsString()}");
+  };
   runApp(Airoute.createMaterialApp(
     title: 'air website',
     debugShowCheckedModeBanner: EnvironmentGlobalConfig.isDebug(),
