@@ -12,8 +12,8 @@ class SortHomePage extends StatefulWidget {
 
 class _SortHomePageState extends State<SortHomePage> {
   bool darkMode = false;
-  bool useSides = false;
-  double numberOfFeatures = 3;
+  bool useSides = true;
+  double numberOfFeatures = 8;
 
   List<int> ticks;
   List<String> features;
