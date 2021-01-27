@@ -14,14 +14,15 @@ class AppViewPageWidget extends StatefulWidget {
 ///
 /// _ViewPageState
 class _ViewPageState extends State<AppViewPageWidget> {
-  bool _autoPlay = false;
+  bool _autoPlay = true;
   var _list = [
-    "assets/place_view_page_banner_0.jpeg",
-    "assets/place_view_page_banner_1.jpeg",
-    "assets/place_view_page_banner_2.jpeg",
-    "assets/place_view_page_banner_0.jpeg",
-    "assets/place_view_page_banner_1.jpeg",
-    "assets/place_view_page_banner_2.jpeg",
+    "assets/banner/0.jpg",
+    "assets/banner/1.jpg",
+    "assets/banner/2.jpg",
+    "assets/banner/3.jpg",
+    "assets/banner/4.jpg",
+    "assets/banner/5.jpg",
+    "assets/banner/6.jpg",
   ];
   @override
   void initState() {
