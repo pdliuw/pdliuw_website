@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pdliuw_website/config/label_config.dart';
@@ -22,19 +24,31 @@ class _LabelHomePageState extends State<LabelHomePage> {
         itemCount: LabelConfig.labelList.length,
         itemBuilder: (BuildContext context, int index) => Container(
           child: AirContainerListItemWidget.defaultStyle(
+              onTapCallback: _labelContainerPressed,
               child: Stack(
-            children: [
-              Image.asset("assets/"),
-              Column(
                 children: [
-                  TextButton(
-                    child: Text('${LabelConfig.labelList[index]['name']}'),
-                    onPressed: () {},
+                  Positioned.fill(
+                    child: ImageFiltered(
+                      imageFilter: ImageFilter.blur(
+                        sigmaX: 0.0,
+                        sigmaY: 0.0,
+                      ),
+                      child: Image.asset(
+                        "${LabelConfig.labelList[index]['backgroundAssetPath']}",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      TextButton(
+                        child: Text('${LabelConfig.labelList[index]['name']}'),
+                        onPressed: _buttonPressed,
+                      ),
+                    ],
                   ),
                 ],
-              ),
-            ],
-          )),
+              )),
         ),
         staggeredTileBuilder: (int index) =>
             new StaggeredTile.count(2, index.isEven ? 2 : 1),
@@ -46,5 +60,9 @@ class _LabelHomePageState extends State<LabelHomePage> {
 
   ///
   /// label
-  void _labelPressed() {}
+  void _labelContainerPressed() {}
+
+  ///
+  /// button pressed
+  void _buttonPressed() {}
 }

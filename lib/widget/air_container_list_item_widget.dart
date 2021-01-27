@@ -5,12 +5,15 @@ import 'package:flutter/material.dart';
 class AirContainerListItemWidget extends StatefulWidget {
   VoidCallback _onTapCallback;
   Widget _child;
+  EdgeInsetsGeometry _padding;
   AirContainerListItemWidget.defaultStyle({
     @required Widget child,
     VoidCallback onTapCallback,
+    EdgeInsetsGeometry padding,
   }) {
     assert(child != null);
     _child = child;
+    _padding = padding;
     _onTapCallback = onTapCallback;
   }
 
@@ -28,7 +31,7 @@ class _airContainerListItemState extends State<AirContainerListItemWidget> {
     return GestureDetector(
       onTap: widget._onTapCallback,
       child: Container(
-        padding:
+        padding: widget._padding ??
             EdgeInsets.only(left: 8.0, right: 8.0, top: 10.0, bottom: 10.0),
         margin: EdgeInsets.only(top: 15.0, left: 12.0, right: 12.0),
         decoration: BoxDecoration(
