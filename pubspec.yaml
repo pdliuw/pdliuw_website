@@ -49,6 +49,9 @@ dependencies:
   # radar 雷达图
   flutter_radar_chart: ^0.1.6
 
+  # timeline 气泡时间线
+  bubble_timeline: ^1.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
