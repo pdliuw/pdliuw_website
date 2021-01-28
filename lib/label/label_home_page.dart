@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pdliuw_website/config/label_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 import 'package:pdliuw_website/widget/air_container_list_item_widget.dart';
 
@@ -17,7 +18,7 @@ class _LabelHomePageState extends State<LabelHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AirAppBarFactory.appBar(titleName: "标签"),
+      appBar: AirAppBarFactory.appBar(titleName: label_title_name),
       body: StaggeredGridView.countBuilder(
         shrinkWrap: false,
         crossAxisCount: 4,

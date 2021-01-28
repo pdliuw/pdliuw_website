@@ -3,7 +3,7 @@ class ArchiveConfig {
   /// archive
   static final List<dynamic> archiveList = [
     {
-      "name": "日常随记",
+      "name": "Daily",
       "description": "日常随记",
       "backgroundAssetPath": "assets/daily_note_logo.jpg",
     },
@@ -108,7 +108,7 @@ class ArchiveConfig {
       "backgroundAssetPath": "assets/flutter_logo.jpg",
     },
     {
-      "name": "贝塞尔曲线",
+      "name": "Bezier curve",
       "description": "ui design think",
       "backgroundAssetPath": "assets/android_one_logo.jpg",
     },

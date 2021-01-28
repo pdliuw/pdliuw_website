@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pdliuw_website/config/person_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
 import 'package:pdliuw_website/person/chart_badge_widget.dart';
 import 'package:pdliuw_website/person/chart_indicator_widget.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
@@ -50,7 +51,7 @@ class _PersonHomePageState extends State<PersonHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AirAppBarFactory.appBar(titleName: "关于"),
+        appBar: AirAppBarFactory.appBar(titleName: person_title_name),
         body: Column(
           children: [
             Expanded(

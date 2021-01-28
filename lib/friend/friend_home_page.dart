@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pdliuw_website/config/friend_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
 import 'package:pdliuw_website/helper/launcher_helper.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 import 'package:pdliuw_website/widget/air_container_list_item_widget.dart';
@@ -16,7 +17,7 @@ class _FriendHomePageState extends State<FriendHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AirAppBarFactory.appBar(titleName: "友情链接"),
+      appBar: AirAppBarFactory.appBar(titleName: friend_title_name),
       body: GridView.count(
         crossAxisCount: 2,
         children: FriendConfig.friendList

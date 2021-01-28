@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_radar_chart/flutter_radar_chart.dart';
 import 'package:pdliuw_website/config/sort_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 
 ///
@@ -39,7 +40,7 @@ class _SortHomePageState extends State<SortHomePage> {
         .toList();
 
     return Scaffold(
-      appBar: AirAppBarFactory.appBar(titleName: "分类"),
+      appBar: AirAppBarFactory.appBar(titleName: sort_title_name),
       body: Container(
         margin: EdgeInsets.all(16),
         padding: EdgeInsets.all(16),

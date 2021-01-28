@@ -1,8 +1,9 @@
 import 'package:airoute/airoute.dart';
 import 'package:flutter/material.dart';
 
-import 'package:pdliuw_website/config/HomeConfig.dart';
-import 'package:pdliuw_website/home/PersonalConfig.dart';
+import 'package:pdliuw_website/config/home_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
+import 'package:pdliuw_website/home/personal_config.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 import 'package:pdliuw_website/widget/air_text_widget.dart';
 import 'package:pdliuw_website/widget/app_view_page_widget.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AirAppBarFactory.appBar(
-        titleName: "Air",
+        titleName: home_title_name,
       ),
       drawer: Drawer(
         child: Column(

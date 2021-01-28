@@ -1,6 +1,7 @@
 import 'package:bubble_timeline/timeline_item.dart';
 import 'package:flutter/material.dart';
 import 'package:pdliuw_website/config/archive_config.dart';
+import 'package:pdliuw_website/config/string_language_file_config.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 import 'package:bubble_timeline/bubble_timeline.dart';
 
@@ -16,7 +17,7 @@ class _ArchiveHomePageState extends State<ArchiveHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AirAppBarFactory.appBar(titleName: "归档"),
+      appBar: AirAppBarFactory.appBar(titleName: archive_title_name),
       body: BubbleTimeline(
         bubbleDiameter: _bubbleRadius,
         items: ArchiveConfig.archiveList
