@@ -18,7 +18,7 @@ class _ChartIndicatorWidgetState extends State<ChartIndicatorWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
           width: 16,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pdliuw_website/config/person_config.dart';
+import 'package:pdliuw_website/person/chart_badge_widget.dart';
 import 'package:pdliuw_website/person/chart_indicator_widget.dart';
 import 'package:pdliuw_website/widget/air_app_bar_factory.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -19,6 +20,8 @@ class _PersonHomePageState extends State<PersonHomePage> {
     super.initState();
 
     PersonConfig.personChartDataList.forEach((element) {
+      String assetPath = element['backgroundAssetPath'];
+      double size = double.parse("${element['badgeSize']}");
       String name = element['name'];
       double value = element['value'];
       Color color = element['color'];
@@ -30,10 +33,17 @@ class _PersonHomePageState extends State<PersonHomePage> {
           title: "$value",
           showTitle: true,
           titlePositionPercentageOffset: 0.5, //0.5:center
+//          badgeWidget: ChartBadgeWidget.defaultStyle(assetPath,
+//              size: size, borderColor: color),
+//          badgePositionPercentageOffset: 1.5,
         ),
       );
 
       _pieTouchData.props.add(value);
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      setState(() {});
     });
   }
 
@@ -41,32 +51,45 @@ class _PersonHomePageState extends State<PersonHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AirAppBarFactory.appBar(titleName: "关于"),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Column(
           children: [
             Expanded(
-              child: PieChart(
-                PieChartData(
-                  sections: _pieSectionDataList,
-                  pieTouchData: _pieTouchData,
-                  borderData: FlBorderData(
-                    show: false,
+              child: Container(
+                padding: EdgeInsets.all(16),
+                child: PieChart(
+                  PieChartData(
+                    sections: _pieSectionDataList,
+                    pieTouchData: _pieTouchData,
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
                   ),
                 ),
-                swapAnimationDuration: Duration(seconds: 2),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: PersonConfig.personChartDataList
-                  .map((e) => Padding(
-                        padding: EdgeInsets.only(top: 6, right: 6, bottom: 6),
-                        child: ChartIndicatorWidget.defaultStyle(
-                            color: e['color'], name: "${e['name']}"),
-                      ))
-                  .toList(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Container(),
+                  flex: 2,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: PersonConfig.personChartDataList
+                        .map((e) => Padding(
+                              padding:
+                                  EdgeInsets.only(top: 6, right: 6, bottom: 6),
+                              child: ChartIndicatorWidget.defaultStyle(
+                                  color: e['color'], name: "${e['name']}"),
+                            ))
+                        .toList(),
+                  ),
+                )
+              ],
             ),
           ],
         ));
