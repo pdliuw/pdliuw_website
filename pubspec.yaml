@@ -52,6 +52,9 @@ dependencies:
   # timeline 气泡时间线
   bubble_timeline: ^1.0.5
 
+  # chart 图标
+  fl_chart: ^0.12.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
