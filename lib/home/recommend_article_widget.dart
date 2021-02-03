@@ -76,12 +76,107 @@ class _RecommendArticleWidgetState extends State<RecommendArticleWidget> {
                           ),
                         ),
                       ),
+                      Positioned.fill(
+                        child: Container(
+                          decoration: BoxDecoration(color: Color(0x60000000)),
+                        ),
+                      ),
                       Column(
                         children: [
-                          TextButton(
-                            child:
-                                Text('${articleFilteredList[index]['title']}'),
-                            onPressed: () {},
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(),
+                                  flex: 1,
+                                ),
+                                Expanded(
+                                  flex: 3,
+                                  child: Center(
+                                    child: AirTextWidget.defaultStyle(
+                                      data:
+                                          '${articleFilteredList[index]['title']}',
+                                      textSize: AirTextSize.large3,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(),
+                                  flex: 1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(),
+                                  flex: 1,
+                                ),
+                                Expanded(
+                                  flex: 3,
+                                  child: Center(
+                                    child: AirTextWidget.defaultStyle(
+                                        data:
+                                            '${articleFilteredList[index]['summary']}'),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(),
+                                  flex: 1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 120,
+                            height: 40,
+                            padding: EdgeInsets.only(
+                              left: 8,
+                              top: 4,
+                              right: 8,
+                              bottom: 4,
+                            ),
+                            margin: EdgeInsets.only(
+                              bottom: 8,
+                            ),
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.red,
+                                    Colors.green,
+                                    Colors.blue
+                                  ],
+                                ),
+                                shape: BoxShape.rectangle,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(45))),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    right: 8,
+                                  ),
+                                  child: Icon(
+                                    Icons.remove_red_eye,
+                                    size: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  "look more",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

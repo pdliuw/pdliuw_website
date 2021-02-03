@@ -31,7 +31,7 @@ void main() {
       "/PersonHomePage": (context) => PersonHomePage(), //用户/关于主页
       "/FriendHomePage": (context) => FriendHomePage(), //友情链接主页
     },
-    locale: const Locale('en', 'US'),
+    locale: const Locale('zh', 'CH'),
     localizationsDelegates: [
       DefaultCupertinoLocalizations.delegate,
       ChineseCupertinoLocalizations.delegate,
