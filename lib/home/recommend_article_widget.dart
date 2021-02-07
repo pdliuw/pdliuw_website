@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:pdliuw_website/custom/app_text_button_container_widget.dart';
 import 'package:pdliuw_website/widget/air_container_list_item_widget.dart';
 import 'package:pdliuw_website/widget/air_text_widget.dart';
 
@@ -134,50 +135,8 @@ class _RecommendArticleWidgetState extends State<RecommendArticleWidget> {
                               ],
                             ),
                           ),
-                          Container(
-                            width: 120,
-                            height: 40,
-                            padding: EdgeInsets.only(
-                              left: 8,
-                              top: 4,
-                              right: 8,
-                              bottom: 4,
-                            ),
-                            margin: EdgeInsets.only(
-                              bottom: 8,
-                            ),
-                            decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Colors.red,
-                                    Colors.green,
-                                    Colors.blue
-                                  ],
-                                ),
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(45))),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    right: 8,
-                                  ),
-                                  child: Icon(
-                                    Icons.remove_red_eye,
-                                    size: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  "look more",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          AppTextButtonContainerWidget.defaultStyle(
+                              onPressed: () {}, child: Text("look more")),
                         ],
                       ),
                     ],
