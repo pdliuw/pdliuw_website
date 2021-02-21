@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:pdliuw_website/custom/app_outlined_button_container_widget.dart';
 import 'package:pdliuw_website/custom/app_text_button_container_widget.dart';
 import 'package:pdliuw_website/widget/air_container_list_item_widget.dart';
 import 'package:pdliuw_website/widget/air_text_widget.dart';
@@ -54,6 +55,10 @@ class _RecommendArticleWidgetState extends State<RecommendArticleWidget> {
               lineHeight: 1,
             ),
           ],
+        ),
+        AppOutlinedButtonContainerWidget.defaultStyle(
+          onPressed: () {},
+          child: Text("look more"),
         ),
         Expanded(
           child: StaggeredGridView.countBuilder(
@@ -135,8 +140,10 @@ class _RecommendArticleWidgetState extends State<RecommendArticleWidget> {
                               ],
                             ),
                           ),
-                          AppTextButtonContainerWidget.defaultStyle(
-                              onPressed: () {}, child: Text("look more")),
+                          AppOutlinedButtonContainerWidget.defaultStyle(
+                            onPressed: () {},
+                            child: Text("look more"),
+                          ),
                         ],
                       ),
                     ],
